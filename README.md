@@ -1,6 +1,6 @@
 # ComfyUI-RMBG
 
-A ComfyUI node for removing image backgrounds using RMBG-2.0, a state-of-the-art background removal model developed by BRIA AI.
+A ComfyUI node for removing image backgrounds using RMBG-2.0.
 
 ## Features
 
