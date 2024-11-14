@@ -20,7 +20,7 @@ git clone https://github.com/1038lab/ComfyUI-RMBG
 
 2. Download RMBG model:
 - Download from [RMBG-2.0](https://huggingface.co/briaai/RMBG-2.0)
-- Place the model files in `ComfyUI/models/RMBG/RMBG-2.0/` directory
+- Place the [RMBG-2.0 model](https://huggingface.co/briaai/RMBG-2.0/tree/main) files in `ComfyUI/models/RMBG/RMBG-2.0/` directory
 
 ## Usage
 
