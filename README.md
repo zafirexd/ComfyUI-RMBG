@@ -2,6 +2,8 @@
 
 A ComfyUI node for removing image backgrounds using RMBG-2.0.
 
+![RMBG_3](https://github.com/user-attachments/assets/f3ffa3c4-5a21-4c0c-a078-b4ffe681c4c4)
+
 ## Features
 
 RMBG-2.0 is built on the innovative BiRefNet (Bilateral Reference Network) architecture, offering:
