@@ -28,16 +28,23 @@ class AILAB_RMBG:
     
     @classmethod
     def INPUT_TYPES(s):
+        tooltips = {
+            "sensitivity": "Adjust mask detection strength",
+            "process_res": "Processing resolution (higher = more VRAM)",
+            "mask_blur": "Blur amount for mask edges",
+            "mask_offset": "Expand/Shrink mask boundary"
+        }
+        
         return {
             "required": {
                 "image": ("IMAGE",),
                 "model_version": (list(AVAILABLE_MODELS.keys()),),
             },
             "optional": {
-                "sensitivity": ("FLOAT", {"default": 0.5, "min": 0.0, "max": 1.0, "step": 0.01}),
-                "process_res": ("INT", {"default": 1024, "min": 512, "max": 2048, "step": 128}),
-                "mask_blur": ("INT", {"default": 0, "min": 0, "max": 64, "step": 1}),
-                "mask_offset": ("INT", {"default": 0, "min": -20, "max": 20, "step": 1}),
+                "sensitivity": ("FLOAT", {"default": 0.5, "min": 0.0, "max": 1.0, "step": 0.01, "tooltip": tooltips["sensitivity"]}),
+                "process_res": ("INT", {"default": 1024, "min": 256, "max": 2048, "step": 32, "tooltip": tooltips["process_res"]}),
+                "mask_blur": ("INT", {"default": 0, "min": 0, "max": 64, "step": 1, "tooltip": tooltips["mask_blur"]}),
+                "mask_offset": ("INT", {"default": 0, "min": -20, "max": 20, "step": 1, "tooltip": tooltips["mask_offset"]}),
             }
         }
     
@@ -98,15 +105,13 @@ class AILAB_RMBG:
                     mask = mask.filter(ImageFilter.GaussianBlur(radius=mask_blur))
                 
                 if mask_offset != 0:
-                    from PIL import ImageMorph
                     if mask_offset > 0:
-                        pattern = [[1,1,1],[1,1,1],[1,1,1]]
                         for _ in range(mask_offset):
                             mask = mask.filter(ImageFilter.MaxFilter(3))
                     else:
                         for _ in range(-mask_offset):
                             mask = mask.filter(ImageFilter.MinFilter(3))
-                
+                                
                 new_im = orig_image.copy()
                 new_im.putalpha(mask)
                 
@@ -128,5 +133,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "AILAB_RMBG": "🧽 RMBG (Remove Background)"
+    "AILAB_RMBG": "RMBG (Remove Background)"
 }
