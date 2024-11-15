@@ -20,16 +20,24 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/1038lab/ComfyUI-RMBG
 ```
 
-2. Download RMBG model:
+2. Manually Download RMBG model:
 - Download from [RMBG-2.0](https://huggingface.co/briaai/RMBG-2.0)
 - Place the [RMBG-2.0 model](https://huggingface.co/briaai/RMBG-2.0/tree/main) files in `ComfyUI/models/RMBG/RMBG-2.0/` directory
 
 ## Usage
-
 ![RMBG](https://github.com/user-attachments/assets/cd0eb92e-8f2e-4ae4-95f1-899a6d83cab6)
 
+### Optional Settings :bulb: Tips
+| Optional Settings    | :memo: Description                                                           | :bulb: Tips                                                                                   |
+|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Sensitivity**      | Adjusts the strength of mask detection. Higher values result in stricter detection. | Default value is 0.5. Adjust based on image complexity; more complex images may require higher sensitivity. |
+| **Processing Resolution** | Controls the processing resolution of the input image, affecting detail and memory usage. | Choose a value between 256 and 2048, with a default of 1024. Higher resolutions provide better detail but increase memory consumption. |
+| **Mask Blur**        | Controls the amount of blur applied to the mask edges, reducing jaggedness. | Default value is 0. Try setting it between 1 and 5 for smoother edge effects.                    |
+| **Mask Offset**      | Allows for expanding or shrinking the mask boundary. Positive values expand the boundary, while negative values shrink it. | Default value is 0. Adjust based on the specific image, typically fine-tuning between -10 and 10. |
+| **Performance Optimization** | Properly setting options can enhance performance when processing multiple images. | If memory allows, consider increasing `process_res` and `mask_blur` values for better results, but be mindful of memory usage. |
+
 ### Basic Usage
-1. Load `🧽 RMBG (Remove Background)` node from the `🧪AILab/🧽RMBG` category
+1. Load `RMBG (Remove Background)` node from the `🧪AILab/🧽RMBG` category
 2. Connect an image to the input
 3. Get two outputs:
    - IMAGE: Processed image with transparent background
