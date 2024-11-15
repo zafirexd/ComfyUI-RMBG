@@ -26,6 +26,8 @@ git clone https://github.com/1038lab/ComfyUI-RMBG
 
 ## Usage
 
+![RMBG](https://github.com/user-attachments/assets/cd0eb92e-8f2e-4ae4-95f1-899a6d83cab6)
+
 ### Basic Usage
 1. Load `🧽 RMBG (Remove Background)` node from the `🧪AILab/🧽RMBG` category
 2. Connect an image to the input
