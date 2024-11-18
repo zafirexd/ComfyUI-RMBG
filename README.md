@@ -20,9 +20,9 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/1038lab/ComfyUI-RMBG
 ```
 
-2. Manually Download RMBG model:
-- Download from [RMBG-2.0](https://huggingface.co/briaai/RMBG-2.0)
-- Place the [RMBG-2.0 model](https://huggingface.co/briaai/RMBG-2.0/tree/main) files in `ComfyUI/models/RMBG/RMBG-2.0/` directory
+2. RMBG Model Download:
+
+The model will be automatically downloaded to `ComfyUI/models/RMBG/` when first time using the custom node.
 
 ## Usage
 ![RMBG](https://github.com/user-attachments/assets/cd0eb92e-8f2e-4ae4-95f1-899a6d83cab6)
