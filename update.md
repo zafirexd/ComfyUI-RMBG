@@ -1,4 +1,4 @@
-# AILAB RMBG Update Log
+# ComfyUI-RMBG Update Log
 
 ## Version 1.1.0
 
