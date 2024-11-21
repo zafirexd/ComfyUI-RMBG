@@ -22,9 +22,7 @@
   - Multiple output format support (with Alpha channel)
   - Efficient batch processing for video frames
 
-
 https://github.com/user-attachments/assets/259220d3-c148-4030-93d6-c17dd5bccee1
-
 
 - Added model cache management
   - Cache status checking
