@@ -4,6 +4,7 @@ A ComfyUI node for removing image backgrounds using RMBG-2.0.
 
 ## News
 - 2024/11/21: Update Comfyui-RMBG-2.0 model to v1.1 ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md) )
+![comfyui-rmbg version compare](https://github.com/user-attachments/assets/2d23cf42-ca74-49e5-a8bf-9de377bd71aa)
 
 ## Features
 
