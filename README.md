@@ -2,7 +2,8 @@
 
 A ComfyUI node for removing image backgrounds using RMBG-2.0.
 
-![RMBG_3](https://github.com/user-attachments/assets/f3ffa3c4-5a21-4c0c-a078-b4ffe681c4c4)
+## News
+- 2024/11/21: Update Comfyui-RMBG-2.0 model to v1.1 ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md) )
 
 ## Features
 
@@ -11,6 +12,11 @@ RMBG-2.0 is built on the innovative BiRefNet (Bilateral Reference Network) archi
 - Precise edge detection and preservation
 - Excellent handling of fine details
 - Support for multiple objects in a single image
+- Output Comparison
+- Output with background
+- Batch output for video
+
+![RMBG_3](https://github.com/user-attachments/assets/f3ffa3c4-5a21-4c0c-a078-b4ffe681c4c4)
 
 ## Installation
 
@@ -22,7 +28,8 @@ git clone https://github.com/1038lab/ComfyUI-RMBG
 
 2. RMBG Model Download:
 
-- The model will be automatically downloaded to `ComfyUI/models/RMBG/` when first time using the custom node.
+- The model will be automatically downloaded to `ComfyUI/models/RMBG/RMBG-2.0` when first time using the custom node.
+- Manually download the RMBG-2.0 model by visiting this [link](https://huggingface.co/briaai/RMBG-2.0/tree/main), then download the files and place them in the `/ComfyUI/models/RMBG/RMBG-2.0` folder.
 
 ## Usage
 ![RMBG](https://github.com/user-attachments/assets/cd0eb92e-8f2e-4ae4-95f1-899a6d83cab6)
