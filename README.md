@@ -7,6 +7,8 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News
 - 2024/11/29: Update Comfyui-RMBG ComfyUI Custom Node to v1.2.0 ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md) )
+ ![RMBGv1 2 0](https://github.com/user-attachments/assets/4fd10123-6c95-4f9e-8d25-fdb39b5fc792)
+
 - 2024/11/21: Update Comfyui-RMBG ComfyUI Custom Node to v1.1.0 ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md) )
 ![comfyui-rmbg version compare](https://github.com/user-attachments/assets/2d23cf42-ca74-49e5-a8bf-9de377bd71aa)
 
