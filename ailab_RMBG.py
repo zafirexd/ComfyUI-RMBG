@@ -3,7 +3,7 @@
 # including RMBG-2.0, INSPYRENET, and BEN. It leverages deep learning techniques
 # to process images and generate masks for background removal.
 
-# This script is under MIT License, it's completely free to use and modify.
+# This script is under GPL-3.0 License, it's completely free to use and modify.
 # However, if you make changes and distribute it or include it in other code,
 # please acknowledge the original source. (https://github.com/AILab-AI/ComfyUI-RMBG)
 # Supporting the original authors by acknowledging their work is greatly appreciated.
