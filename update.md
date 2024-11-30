@@ -7,20 +7,22 @@
 - Added support for RMBG-2.0, INSPYRENET, and BEN models
 - Implemented lazy loading for models (only downloads when first used)
 
+![RMBGv1 2 0_node](https://github.com/user-attachments/assets/d36bc90b-8bbe-45af-906f-47503c7cbf61)
+
 ### Model Introduction
-- RMBG-2.0 ([Homepage](https://huggingface.co/briaai/RMBG-2.0))
+- RMBG-2.0 ([https://huggingface.co/briaai/RMBG-2.0](https://huggingface.co/briaai/RMBG-2.0))
   - Latest version of RMBG model
   - Excellent performance on complex backgrounds
   - High accuracy in preserving fine details
   - Best for general purpose background removal
 
-- INSPYRENET ([Homepage](https://github.com/plemeri/InSPyReNet))
+- INSPYRENET ([https://github.com/plemeri/InSPyReNet](https://github.com/plemeri/InSPyReNet))
   - Specialized in human portrait segmentation
   - Fast processing speed
   - Good edge detection capability
   - Ideal for portrait photos and human subjects
 
-- BEN (Background Elimination Network) ([Homepage](https://huggingface.co/PramaLLC/BEN))
+- BEN (Background Elimination Network) ([https://huggingface.co/PramaLLC/BEN](https://huggingface.co/PramaLLC/BEN))
   - Robust performance on various image types
   - Good balance between speed and accuracy
   - Effective on both simple and complex scenes
