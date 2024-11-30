@@ -5,7 +5,7 @@ A ComfyUI node for removing image backgrounds with multiple models: RMBG-2.0, IN
 $${\color{red}If\ this\ custom\ node\ helps\ you\ or\ you\ like\ my\ work,\ please\ give\ me⭐on\ this\ repo!}$$
 $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
-## News
+## News & Updates
 - 2024/11/29: Update Comfyui-RMBG ComfyUI Custom Node to v1.2.0 ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md) )
  ![RMBGv1 2 0](https://github.com/user-attachments/assets/4fd10123-6c95-4f9e-8d25-fdb39b5fc792)
 
