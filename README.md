@@ -21,13 +21,14 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## Installation
 
-1. install on ComfyUI-Manager, search `Comfyui-RMBG` and install
-   install requirment.txt in the ComfyUI-RMBG folder
+1. install on ComfyUI-Manager, search `Comfyui-RMBG` and install.
+![image](https://github.com/user-attachments/assets/419db32c-3e52-4276-bc83-7782363e0aa0)
+   Install the dependencies `requirements.txt` file within the ComfyUI-RMBG folder.
    ```bash
    ./ComfyUI/python_embeded/python -m pip install -r requirements.txt
    ```
 
-2. Clone this repository to your ComfyUI custom_nodes folder:
+3. Clone this repository to your ComfyUI custom_nodes folder:
 ```bash
 cd ComfyUI/custom_nodes
 git clone https://github.com/1038lab/ComfyUI-RMBG
