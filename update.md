@@ -1,6 +1,6 @@
 # ComfyUI-RMBG Update Log
 
-## v1.2.2 (2024/12/03)
+## v1.2.2 (2024/12/12)
 ![RMBG1 2 2](https://github.com/user-attachments/assets/cb7b1ad0-a2ca-4369-9401-54957af6c636)
 
 ### Improvements
