@@ -1,5 +1,15 @@
 # ComfyUI-RMBG Update Log
 
+## v1.2.2 (2024/12/03)
+
+### Improvements
+- Changed INSPYRENET model format from .pth to .safetensors for:
+  - Better security
+  - Faster loading speed (2-3x faster)
+  - Improved memory efficiency
+  - Better cross-platform compatibility
+- Simplified node display name for better UI integration
+
 ## v1.2.1 (2024/12/02)
 
 ### New Features
