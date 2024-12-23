@@ -1,5 +1,59 @@
 # ComfyUI-RMBG Update Log
 
+## v1.3.0 (2024/12/23)
+
+### New Segment (RMBG) Node
+- Text-Prompted Intelligent Object Segmentation
+  - Use natural language prompts (e.g., "a cat", "red car") to identify and segment target objects
+  - Support for multiple object detection and segmentation
+  - Perfect for precise object extraction and recognition tasks
+
+### Supported Models
+- SAM (Segment Anything Model)
+  - sam_vit_h: 2.56GB - Highest accuracy
+  - sam_vit_l: 1.25GB - Balanced performance
+  - sam_vit_b: 375MB - Lightweight option
+- GroundingDINO
+  - SwinT: 694MB - Fast and efficient
+  - SwinB: 938MB - Higher precision
+
+### Key Features
+- Intuitive Parameter Controls
+  - Threshold: Adjust detection precision
+  - Mask Blur: Smooth edges
+  - Mask Offset: Expand or shrink selection
+  - Background Options: Alpha/Black/White/Green/Blue/Red
+- Automatic Model Management
+  - Auto-download models on first use
+  - Smart GPU memory handling
+
+### Usage Examples
+1. Tag-Style Prompts
+   - Single object: "cat"
+   - Multiple objects: "cat, dog, person"
+   - With attributes: "red car, blue shirt"
+   - Format: Use commas to separate multiple objects (e.g., "a, b, c")
+
+2. Natural Language Prompts
+   - Simple sentence: "a person wearing a red jacket"
+   - Complex scene: "a woman in a blue dress standing next to a car"
+   - With location: "a cat sitting on the sofa"
+   - Format: Write a natural descriptive sentence
+
+3. Tips for Better Results
+   - For Tag Style:
+     - Separate objects with commas: "chair, table, lamp"
+     - Add attributes before objects: "wooden chair, glass table"
+     - Keep it simple and clear
+   - For Natural Language:
+     - Use complete sentences
+     - Include details like color, position, action
+     - Be as descriptive as needed
+   - Parameter Adjustments:
+     - Threshold: 0.25-0.35 for broad detection, 0.45-0.55 for precision
+     - Use mask blur for smoother edges
+     - Adjust mask offset to fine-tune selection
+
 ## v1.2.2 (2024/12/12)
 ![RMBG1 2 2](https://github.com/user-attachments/assets/cb7b1ad0-a2ca-4369-9401-54957af6c636)
 
