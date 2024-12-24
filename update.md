@@ -8,6 +8,8 @@
   - Support for multiple object detection and segmentation
   - Perfect for precise object extraction and recognition tasks
 
+![rmbg_v1 3 0](https://github.com/user-attachments/assets/0bff9a4d-7e22-403e-9ffb-e9defb335d9f)
+
 ### Supported Models
 - SAM (Segment Anything Model)
   - sam_vit_h: 2.56GB - Highest accuracy
