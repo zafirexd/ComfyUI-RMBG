@@ -7,7 +7,7 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
 - 2024/12/23: Update ComfyUI-RMBG to v1.3.0 with new Segment node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v140-20241222) )
-- ![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
+![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
 
   - Added text-prompted object segmentation
   - Support both tag-style ("cat, dog") and natural language ("a person wearing red jacket") prompts
