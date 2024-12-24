@@ -30,6 +30,7 @@
   - Smart GPU memory handling
 
 ### Usage Examples
+![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
 1. Tag-Style Prompts
    - Single object: "cat"
    - Multiple objects: "cat, dog, person"
