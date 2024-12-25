@@ -6,6 +6,10 @@ $${\color{red}If\ this\ custom\ node\ helps\ you\ or\ you\ like\ my\ work,\ plea
 $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
+- 2024/12/25: Update ComfyUI-RMBG to v1.3.1 with bug fixes ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v131-20241225) )
+  - Fixed an issue with mask processing when the model returns a list of masks.
+  - Improved handling of image formats to prevent processing errors.
+
 - 2024/12/23: Update ComfyUI-RMBG to v1.3.0 with new Segment node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v140-20241222) )
 ![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
 
