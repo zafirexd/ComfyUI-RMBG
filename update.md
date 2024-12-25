@@ -1,5 +1,11 @@
 # ComfyUI-RMBG Update Log
 
+## v1.3.1 (2024/12/25)
+
+### Bug Fixes
+- Fixed an issue with mask processing when the model returns a list of masks.
+- Improved handling of image formats to prevent processing errors.
+
 ## v1.3.0 (2024/12/23)
 
 ### New Segment (RMBG) Node
@@ -7,8 +13,6 @@
   - Use natural language prompts (e.g., "a cat", "red car") to identify and segment target objects
   - Support for multiple object detection and segmentation
   - Perfect for precise object extraction and recognition tasks
-
-![rmbg_v1 3 0](https://github.com/user-attachments/assets/0bff9a4d-7e22-403e-9ffb-e9defb335d9f)
 
 ### Supported Models
 - SAM (Segment Anything Model)
@@ -30,7 +34,6 @@
   - Smart GPU memory handling
 
 ### Usage Examples
-![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
 1. Tag-Style Prompts
    - Single object: "cat"
    - Multiple objects: "cat, dog, person"
