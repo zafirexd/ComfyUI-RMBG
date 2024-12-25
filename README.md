@@ -57,8 +57,8 @@ git clone https://github.com/1038lab/ComfyUI-RMBG
 3. Manually download the models:
 - The model will be automatically downloaded to `ComfyUI/models/RMBG/` when first time using the custom node.
 - Manually download the RMBG-2.0 model by visiting this [link](https://huggingface.co/briaai/RMBG-2.0/tree/main), then download the files and place them in the `/ComfyUI/models/RMBG/RMBG-2.0` folder.
-- Manually download the INSPYRENET models by visiting the [link](https://huggingface.co/1038lab/inspyrenet), then download the files and place them in the `/ComfyUI/models/INSPYRENET` folder.
-- Manually download the BEN model by visiting the [link](https://huggingface.co/PramaLLC/BEN), then download the files and place them in the `/ComfyUI/models/BEN` folder.
+- Manually download the INSPYRENET models by visiting the [link](https://huggingface.co/1038lab/inspyrenet), then download the files and place them in the `/ComfyUI/models/RMBG/INSPYRENET` folder.
+- Manually download the BEN model by visiting the [link](https://huggingface.co/PramaLLC/BEN), then download the files and place them in the `/ComfyUI/models/RMBG/BEN` folder.
 - Manually download the SAM models by visiting the [link](https://huggingface.co/1038lab/sam), then download the files and place them in the `/ComfyUI/models/SAM` folder.
 - Manually download the GroundingDINO models by visiting the [link](https://huggingface.co/1038lab/GroundingDINO), then download the files and place them in the `/ComfyUI/models/grounding-dino` folder.
 
