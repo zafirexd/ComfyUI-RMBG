@@ -42,19 +42,23 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## Installation
 
-1. install on ComfyUI-Manager, search `Comfyui-RMBG` and install
-   install requirment.txt in the ComfyUI-RMBG folder
-   ```bash
-   ./ComfyUI/python_embeded/python -m pip install -r requirements.txt
-   ```
+### Method 1. install on ComfyUI-Manager, search `Comfyui-RMBG` and install
+install requirment.txt in the ComfyUI-RMBG folder
+  ```bash
+  ./ComfyUI/python_embeded/python -m pip install -r requirements.txt
+  ```
 
-2. Clone this repository to your ComfyUI custom_nodes folder:
-```bash
-cd ComfyUI/custom_nodes
-git clone https://github.com/1038lab/ComfyUI-RMBG
-```
+### Method 2. Clone this repository to your ComfyUI custom_nodes folder:
+  ```bash
+  cd ComfyUI/custom_nodes
+  git clone https://github.com/1038lab/ComfyUI-RMBG
+  ```
+  install requirment.txt in the ComfyUI-RMBG folder
+  ```bash
+  ./ComfyUI/python_embeded/python -m pip install -r requirements.txt
+  ```
 
-3. Manually download the models:
+### 3. Manually download the models:
 - The model will be automatically downloaded to `ComfyUI/models/RMBG/` when first time using the custom node.
 - Manually download the RMBG-2.0 model by visiting this [link](https://huggingface.co/briaai/RMBG-2.0/tree/main), then download the files and place them in the `/ComfyUI/models/RMBG/RMBG-2.0` folder.
 - Manually download the INSPYRENET models by visiting the [link](https://huggingface.co/1038lab/inspyrenet), then download the files and place them in the `/ComfyUI/models/RMBG/INSPYRENET` folder.
