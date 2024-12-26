@@ -14,6 +14,8 @@
   - Support for multiple object detection and segmentation
   - Perfect for precise object extraction and recognition tasks
 
+![rmbg v1.3.0](https://github.com/user-attachments/assets/7607546e-ffcb-45e2-ab90-83267292757e)
+
 ### Supported Models
 - SAM (Segment Anything Model)
   - sam_vit_h: 2.56GB - Highest accuracy
@@ -147,8 +149,8 @@ https://github.com/user-attachments/assets/40ec0b27-4fa2-4c99-9aea-5afad9ca62a5
 - Added background color options
   - Alpha (transparent background)
   - Black, White, Green, Blue, Red
-    
-![rmbg1 Demo](https://github.com/user-attachments/assets/4f7d073c-f9cc-4bdb-875c-ba51decc9d5a)
+
+![RMBG_v1 1 0](https://github.com/user-attachments/assets/b7cbadff-5386-4d96-bc34-a19ad34efb4b)
 
 - Improved mask processing
   - Better detail preservation
