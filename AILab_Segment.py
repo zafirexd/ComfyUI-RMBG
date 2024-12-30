@@ -205,6 +205,11 @@ class Segment:
         
         result_image = apply_background_color(image, mask_image, background_color)
         
+        if background_color != "Alpha":
+            result_image = result_image.convert("RGB")
+        else:
+            result_image = result_image.convert("RGBA")
+
         print(f'Successfully created segment for: "{prompt}"')
         return (pil2tensor(result_image), image2mask(mask_image))
 
