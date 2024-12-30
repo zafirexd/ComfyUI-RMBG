@@ -6,6 +6,10 @@ $${\color{red}If\ this\ custom\ node\ helps\ you\ or\ you\ like\ my\ work,\ plea
 $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
+- 2024/12/29: Update ComfyUI-RMBG to v1.3.2 with background handling ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v132-20241229) )
+  - Enhanced background handling to support RGBA output when "Alpha" is selected.
+  - Ensured RGB output for all other background color selections.
+
 - 2024/12/25: Update ComfyUI-RMBG to v1.3.1 with bug fixes ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v131-20241225) )
   - Fixed an issue with mask processing when the model returns a list of masks.
   - Improved handling of image formats to prevent processing errors.
