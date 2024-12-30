@@ -1,5 +1,11 @@
 # ComfyUI-RMBG Update Log
 
+## v1.3.2 (2024/12/29)
+
+### Updates
+- Enhanced background handling to support RGBA output when "Alpha" is selected.
+- Ensured RGB output for all other background color selections.
+- 
 ## v1.3.1 (2024/12/25)
 
 ### Bug Fixes
