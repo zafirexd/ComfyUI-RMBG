@@ -1,9 +1,9 @@
-# ComfyUI-RMBG v1.3.2
+# ComfyUI-RMBG v1.4.0
 # This custom node for ComfyUI provides functionality for background removal using various models,
 # including RMBG-2.0, INSPYRENET, and BEN. It leverages deep learning techniques
 # to process images and generate masks for background removal.
 
-# License Notice:
+# Models License Notice:
 # - RMBG-2.0: Apache-2.0 License (https://huggingface.co/briaai/RMBG-2.0)
 # - INSPYRENET: MIT License (https://github.com/plemeri/InSPyReNet)
 # - BEN: Apache-2.0 License (https://huggingface.co/PramaLLC/BEN)
