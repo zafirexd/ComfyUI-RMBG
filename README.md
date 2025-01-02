@@ -194,6 +194,7 @@ GroundingDINO is a model for text-prompted object detection and segmentation, of
 - BEN: https://huggingface.co/PramaLLC/BEN
 - SAM: https://huggingface.co/facebook/sam-vit-base
 - GroundingDINO: https://github.com/IDEA-Research/GroundingDINO
+- Clothes Segment: https://huggingface.co/mattmdjaga/segformer_b2_clothes
 - Created by: [1038 Lab](https://github.com/1038lab)
 
 ## License
