@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-RMBG"
-version = "1.3.0
-description = "A ComfyUI custom node designed for advanced image background removal utilizing multiple models, including RMBG-2.0, INSPYRENET, and BEN."
+version = "1.4.0
+description = "A ComfyUI custom node designed for advanced image background removal and object segmentation, utilizing multiple models including RMBG-2.0, INSPYRENET, BEN, SAM, and GroundingDINO."
 authors = [
     {name = "AILab", email = "ailab@mail.com"}
 ]
