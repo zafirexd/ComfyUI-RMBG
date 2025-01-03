@@ -12,7 +12,7 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
   - Added intelligent clothes segmentation with 18 different categories
   - Support multiple item selection and combined segmentation
   - Same parameter controls as other RMBG nodes
-  - 
+  
 - 2024/12/29: Update ComfyUI-RMBG to v1.3.2 with background handling ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v132-20241229) )
   - Enhanced background handling to support RGBA output when "Alpha" is selected.
   - Ensured RGB output for all other background color selections.
