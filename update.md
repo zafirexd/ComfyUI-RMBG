@@ -9,6 +9,8 @@
   - Supports real-time processing for enhanced user experience.
   - Ideal for fashion-related applications, including virtual try-ons and outfit recommendations.
   - Support for gray background color.
+  - 
+![RMBGv_1 5 0](https://github.com/user-attachments/assets/a250c1a6-8425-4902-b902-a6e1a8bfe959)
 
 ## v1.4.0 (2025/1/2)
 
