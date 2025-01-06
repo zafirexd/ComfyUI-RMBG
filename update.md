@@ -2,8 +2,8 @@
 
 ## v1.5.0 (2025/01/05)
 
-### New FashionSegment Custom Node
-- Added a new custom node for fashion segmentation.
+### New Fashion and accessories Segment Custom Node
+- Added a new custom node for fashion and accessories segmentation.
   - Capable of identifying and segmenting various fashion items such as dresses, shoes, and accessories.
   - Utilizes advanced machine learning techniques for accurate segmentation.
   - Supports real-time processing for enhanced user experience.
