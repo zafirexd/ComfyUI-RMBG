@@ -1,5 +1,15 @@
 # ComfyUI-RMBG Update Log
 
+## v1.5.0 (2025/01/05)
+
+### New FashionSegment Custom Node
+- Introduced a new custom node for fashion segmentation.
+  - Capable of identifying and segmenting various fashion items such as dresses, shoes, and accessories.
+  - Utilizes advanced machine learning techniques for accurate segmentation.
+  - Supports real-time processing for enhanced user experience.
+  - Ideal for fashion-related applications, including virtual try-ons and outfit recommendations.
+  - Support for gray background color.
+
 ## v1.4.0 (2025/1/2)
 
 ### New Clothes Segment Node
