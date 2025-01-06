@@ -6,7 +6,7 @@ $${\color{red}If\ this\ custom\ node\ helps\ you\ or\ you\ like\ my\ work,\ plea
 $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
-- 2025/01/05: Update ComfyUI-RMBG to v1.5.0 with new FashionSegment custom node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v150-20250105) )
+- 2025/01/05: Update ComfyUI-RMBG to v1.5.0 with new Fashion and accessories Segment custom node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v150-20250105) )
 ![RMBGv_1 5 0](https://github.com/user-attachments/assets/a250c1a6-8425-4902-b902-a6e1a8bfe959)
 
   - Added a new custom node for fashion segmentation.
