@@ -7,7 +7,6 @@ $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
 - 2025/01/22: Update ComfyUI-RMBG to v1.6.0 with new Face Segment custom node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v160-20250122) )
-
 ![RMBG_v1 6 0](https://github.com/user-attachments/assets/9ccefec1-4370-4708-a12d-544c90888bf2)
 
   - Added a new custom node for face parsing and segmentation
