@@ -11,7 +11,7 @@
   - Automatic model downloading and resource management
   - Perfect for portrait editing and facial feature manipulation
 
-![RMBGv_1 6 0](https://github.com/user-attachments/assets/face-segment-demo)
+![RMBG_v1 6 0](https://github.com/user-attachments/assets/9ccefec1-4370-4708-a12d-544c90888bf2)
 
 ## v1.5.0 (2025/01/05)
 
