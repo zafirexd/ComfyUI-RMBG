@@ -1,7 +1,7 @@
 # ComfyUI-RMBG Update Log
 
 ## v1.7.0 (2024/01/05)
-
+![rmbg_v1 7 0](https://github.com/user-attachments/assets/22053105-f3db-4e24-be66-ae0ad2cc248e)
 ### New Model Added: BEN2
 - Added support for BEN2 (Background Elimination Network 2)
   - Improved performance over original BEN model
@@ -21,6 +21,7 @@
 - Improved model switching and resource cleanup
 
 ### Comparison with Previous Models
+![rmbg_v1 7 0](https://github.com/user-attachments/assets/5370305e-1b31-47ad-a1b4-852991b38f45)
 - BEN2 vs BEN:
   - Better edge detection
   - Improved handling of complex backgrounds
