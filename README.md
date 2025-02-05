@@ -6,6 +6,8 @@ $${\color{red}If\ this\ custom\ node\ helps\ you\ or\ you\ like\ my\ work,\ plea
 $${\color{red}It's\ a\ greatest\ encouragement\ for\ my\ efforts!}$$
 
 ## News & Updates
+- 2025/02/04: Update ComfyUI-RMBG to v1.7.0 with new BEN2 model ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v170-20250204) )
+
 - 2025/01/22: Update ComfyUI-RMBG to v1.6.0 with new Face Segment custom node ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v160-20250122) )
 ![RMBG_v1 6 0](https://github.com/user-attachments/assets/9ccefec1-4370-4708-a12d-544c90888bf2)
 
@@ -91,8 +93,10 @@ install requirment.txt in the ComfyUI-RMBG folder
 - The model will be automatically downloaded to `ComfyUI/models/RMBG/` when first time using the custom node.
 - Manually download the RMBG-2.0 model by visiting this [link](https://huggingface.co/briaai/RMBG-2.0/tree/main), then download the files and place them in the `/ComfyUI/models/RMBG/RMBG-2.0` folder.
 - Manually download the INSPYRENET models by visiting the [link](https://huggingface.co/1038lab/inspyrenet), then download the files and place them in the `/ComfyUI/models/RMBG/INSPYRENET` folder.
-- Manually download the BEN model by visiting the [link](https://huggingface.co/PramaLLC/BEN), then download the files and place them in the `/ComfyUI/models/RMBG/BEN` folder.
+- Manually download the BEN model by visiting the [link](https://huggingface.co/1038lab/BEN), then download the files and place them in the `/ComfyUI/models/RMBG/BEN` folder.
+- Manually download the BEN2 model by visiting the [link](https://huggingface.co/1038lab/BEN2), then download the files and place them in the `/ComfyUI/models/RMBG/BEN2` folder.
 - Manually download the SAM models by visiting the [link](https://huggingface.co/1038lab/sam), then download the files and place them in the `/ComfyUI/models/SAM` folder.
+
 - Manually download the GroundingDINO models by visiting the [link](https://huggingface.co/1038lab/GroundingDINO), then download the files and place them in the `/ComfyUI/models/grounding-dino` folder.
 - Manually download the Clothes Segment model by visiting the [link](https://huggingface.co/1038lab/segformer_clothes), then download the files and place them in the `/ComfyUI/models/RMBG/segformer_clothes` folder.
 - Manually download the Fashion Segment model by visiting the [link](https://huggingface.co/1038lab/segformer_fashion), then download the files and place them in the `/ComfyUI/models/RMBG/segformer_fashion` folder.

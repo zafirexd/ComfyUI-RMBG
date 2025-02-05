@@ -1,5 +1,39 @@
 # ComfyUI-RMBG Update Log
 
+## v1.7.0 (2024/01/05)
+
+### New Model Added: BEN2
+- Added support for BEN2 (Background Elimination Network 2)
+  - Improved performance over original BEN model
+  - Better edge detection and detail preservation
+  - Enhanced batch processing capabilities (up to 3 images per batch)
+  - Optimized memory usage and processing speed
+
+### Model Changes
+- Updated model repository paths for BEN and BEN2
+- Switched to 1038lab repositories for better maintenance and updates
+- Maintained full compatibility with existing workflows
+
+### Technical Improvements
+- Implemented efficient batch processing for BEN2
+- Optimized memory management for large batches
+- Enhanced error handling and model loading
+- Improved model switching and resource cleanup
+
+### Comparison with Previous Models
+- BEN2 vs BEN:
+  - Better edge detection
+  - Improved handling of complex backgrounds
+  - More efficient batch processing
+  - Enhanced detail preservation
+  - Faster processing speed
+
+### Repository Updates
+- Updated documentation to include BEN2 model
+- Added new model license information
+- Improved installation instructions
+- Updated version number to 1.7.0
+
 ## v1.6.0 (2025/01/22)
 
 ### New Face Segment Custom Node

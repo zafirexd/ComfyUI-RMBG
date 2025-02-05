@@ -1,12 +1,13 @@
-# ComfyUI-RMBG v1.6.0
+# ComfyUI-RMBG v1.7.0
 # This custom node for ComfyUI provides functionality for background removal using various models,
-# including RMBG-2.0, INSPYRENET, and BEN. It leverages deep learning techniques
+# including RMBG-2.0, INSPYRENET, BEN and BEN2. It leverages deep learning techniques
 # to process images and generate masks for background removal.
-
+#
 # Models License Notice:
 # - RMBG-2.0: Apache-2.0 License (https://huggingface.co/briaai/RMBG-2.0)
 # - INSPYRENET: MIT License (https://github.com/plemeri/InSPyReNet)
 # - BEN: Apache-2.0 License (https://huggingface.co/PramaLLC/BEN)
+# - BEN2: Apache-2.0 License (https://huggingface.co/PramaLLC/BEN2)
 # 
 # This integration script follows GPL-3.0 License.
 # When using or modifying this code, please respect both the original model licenses
@@ -57,12 +58,21 @@ AVAILABLE_MODELS = {
     },
     "BEN": {
         "type": "ben",
-        "repo_id": "PramaLLC/BEN",
+        "repo_id": "1038lab/BEN",
         "files": {
             "model.py": "model.py",
             "BEN_Base.pth": "BEN_Base.pth"
         },
         "cache_dir": "BEN"
+    },
+    "BEN2": {
+        "type": "ben2",
+        "repo_id": "1038lab/BEN2",
+        "files": {
+            "BEN2_Base.pth": "BEN2_Base.pth",
+            "BEN2.py": "BEN2.py"
+        },
+        "cache_dir": "BEN2"
     }
 }
 
@@ -303,12 +313,89 @@ class BENModel(BaseModelLoader):
         except Exception as e:
             handle_model_error(f"Error in BEN processing: {str(e)}")
 
+class BEN2Model(BaseModelLoader):
+    def __init__(self):
+        super().__init__()
+        
+    def load_model(self, model_name):
+        if self.current_model_version != model_name:
+            self.clear_model()
+            
+            cache_dir = self.get_cache_dir(model_name)
+            model_path = os.path.join(cache_dir, "BEN2.py")
+            module_name = f"custom_ben2_model_{hash(model_path)}"
+            
+            spec = importlib.util.spec_from_file_location(module_name, model_path)
+            ben2_module = importlib.util.module_from_spec(spec)
+            sys.modules[module_name] = ben2_module
+            spec.loader.exec_module(ben2_module)
+            
+            model_weights_path = os.path.join(cache_dir, "BEN2_Base.pth")
+            self.model = ben2_module.BEN_Base()
+            self.model.loadcheckpoints(model_weights_path)
+            
+            self.model.eval()
+            for param in self.model.parameters():
+                param.requires_grad = False
+            
+            torch.set_float32_matmul_precision('high')
+            self.model.to(device)
+            self.current_model_version = model_name
+    
+    def process_image(self, images, model_name, params):
+        try:
+            self.load_model(model_name)
+            
+            if isinstance(images, torch.Tensor):
+                if len(images.shape) == 3:
+                    images = [images]
+                else:
+                    images = [img for img in images]
+            
+            batch_size = 3
+            all_masks = []
+            
+            for i in range(0, len(images), batch_size):
+                batch_images = images[i:i + batch_size]
+                batch_pil_images = []
+                original_sizes = []
+                
+                for img in batch_images:
+                    orig_image = tensor2pil(img)
+                    w, h = orig_image.size
+                    original_sizes.append((w, h))
+                    
+                    aspect_ratio = h / w
+                    new_w = params["process_res"]
+                    new_h = int(params["process_res"] * aspect_ratio)
+                    resized_image = orig_image.resize((new_w, new_h), Image.LANCZOS)
+                    processed_input = resized_image.convert("RGBA")
+                    batch_pil_images.append(processed_input)
+                
+                with torch.no_grad():
+                    foregrounds = self.model.inference(batch_pil_images, refine_foreground=False)
+                    if not isinstance(foregrounds, list):
+                        foregrounds = [foregrounds]
+                
+                for foreground, (orig_w, orig_h) in zip(foregrounds, original_sizes):
+                    foreground = foreground.resize((orig_w, orig_h), Image.LANCZOS)
+                    mask = foreground.split()[-1]
+                    all_masks.append(mask)
+            
+            if len(all_masks) == 1:
+                return all_masks[0]
+            return all_masks
+
+        except Exception as e:
+            handle_model_error(f"Error in BEN2 processing: {str(e)}")
+
 class RMBG:
     def __init__(self):
         self.models = {
             "RMBG-2.0": RMBGModel(),
             "INSPYRENET": InspyrenetModel(),
-            "BEN": BENModel()
+            "BEN": BENModel(),
+            "BEN2": BEN2Model()
         }
     
     @classmethod
