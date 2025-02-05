@@ -29,12 +29,6 @@
   - Enhanced detail preservation
   - Faster processing speed
 
-### Repository Updates
-- Updated documentation to include BEN2 model
-- Added new model license information
-- Improved installation instructions
-- Updated version number to 1.7.0
-
 ## v1.6.0 (2025/01/22)
 
 ### New Face Segment Custom Node
