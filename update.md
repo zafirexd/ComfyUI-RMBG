@@ -1,14 +1,17 @@
 # ComfyUI-RMBG Update Log
 
 ## v1.8.0 (2025/02/07)
+![RMBG-v1 8 0](https://github.com/user-attachments/assets/d4a1309c-a635-443a-97b5-2639fb48c27a)
 
 ### New Model Added: BiRefNet-HR
-- Added support for BiRefNet High Resolution model
+  - Added support for BiRefNet High Resolution model
   - Trained with 2048x2048 resolution images
   - Superior performance metrics (maxFm: 0.925, MAE: 0.026)
   - Better edge detection and detail preservation
   - FP16 optimization for faster processing
   - MIT License for commercial use
+  - 
+![RMBG_v1 8 0](https://github.com/user-attachments/assets/193d8d4b-5fac-475c-a184-9a28fa6252fc)
 
 ### Technical Improvements
 - Added FP16 (half-precision) support for better performance
