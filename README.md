@@ -7,13 +7,12 @@ $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
 
 ## News & Updates
 - 2025/02/07: Update ComfyUI-RMBG to v1.8.0 with new BiRefNet-HR model ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v180-20250207) )
-![rmbg_v1 8 0](https://github.com/user-attachments/assets/22053105-f3db-4e24-be66-ae0ad2cc248e)
+![RMBG_v1 8 0](https://github.com/user-attachments/assets/193d8d4b-5fac-475c-a184-9a28fa6252fc)
 
   - Added a new custom node for BiRefNet-HR model.
   - Support high resolution image processing (up to 2048x2048)
 
 - 2025/02/04: Update ComfyUI-RMBG to v1.7.0 with new BEN2 model ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v170-20250204) )
-
 ![rmbg_v1 7 0](https://github.com/user-attachments/assets/22053105-f3db-4e24-be66-ae0ad2cc248e)
 
   - Added a new custom node for BEN2 model.
