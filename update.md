@@ -5,14 +5,14 @@
 Add and group all BiRefNet models collections into BiRefNet node.
 
 ### New BiRefNet Models Adds
-- Added BiRefNet general purpose model (balanced performance)
-- Added BiRefNet_512x512 model (optimized for 512x512 resolution)
-- Added BiRefNet-portrait model (optimized for portrait/human matting)
-- Added BiRefNet-matting model (general purpose matting)
-- Added BiRefNet-HR model (high resolution up to 2560x2560)
-- Added BiRefNet-HR-matting model (high resolution matting)
-- Added BiRefNet_lite model (lightweight version for faster processing)
-- Added BiRefNet_lite-2K model (lightweight version for 2K resolution)
+- Added `BiRefNet` general purpose model (balanced performance)
+- Added `BiRefNet_512x512` model (optimized for 512x512 resolution)
+- Added `BiRefNet-portrait` model (optimized for portrait/human matting)
+- Added `BiRefNet-matting` model (general purpose matting)
+- Added `BiRefNet-HR model` (high resolution up to 2560x2560)
+- Added `BiRefNet-HR-matting` model (high resolution matting)
+- Added `BiRefNet_lite` model (lightweight version for faster processing)
+- Added `BiRefNet_lite-2K` model (lightweight version for 2K resolution)
 
 ### Technical Improvements
 - Added FP16 (half-precision) support for better performance
