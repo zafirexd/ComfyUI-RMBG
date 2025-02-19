@@ -1,7 +1,7 @@
 # ComfyUI-RMBG Update Log
 
 ## v1.9.0 (2025/02/19)
-Group all BiRefNet models collections into BiRefNet node.
+Add and group all BiRefNet models collections into BiRefNet node.
 
 ### New BiRefNet Models Adds
 - Added BiRefNet general purpose model (balanced performance)
