@@ -114,6 +114,7 @@ install requirment.txt in the ComfyUI-RMBG folder
 - Manually download the GroundingDINO models by visiting the [link](https://huggingface.co/1038lab/GroundingDINO), then download the files and place them in the `/ComfyUI/models/grounding-dino` folder.
 - Manually download the Clothes Segment model by visiting the [link](https://huggingface.co/1038lab/segformer_clothes), then download the files and place them in the `/ComfyUI/models/RMBG/segformer_clothes` folder.
 - Manually download the Fashion Segment model by visiting the [link](https://huggingface.co/1038lab/segformer_fashion), then download the files and place them in the `/ComfyUI/models/RMBG/segformer_fashion` folder.
+- Manually download BiRefNet models by visiting the [link](https://huggingface.co/1038lab/BiRefNet), then download the files and place them in the `/ComfyUI/models/RMBG/BiRefNet` folder.
 
 ## Usage
 ### RMBG Node
@@ -207,7 +208,6 @@ SAM is a powerful model for object detection and segmentation, offering:
 - Precise edge detection and preservation
 - Excellent handling of fine details
 - Support for multiple objects in a single image
-
 - Output Comparison
 - Output with background
 - Batch output for video
@@ -221,6 +221,16 @@ GroundingDINO is a model for text-prompted object detection and segmentation, of
 - Output Comparison
 - Output with background
 - Batch output for video
+
+## BiRefNet Models
+- BiRefNet-general purpose model (balanced performance)
+- BiRefNet_512x512 model (optimized for 512x512 resolution)
+- BiRefNet-portrait model (optimized for portrait/human matting)
+- BiRefNet-matting model (general purpose matting)
+- BiRefNet-HR model (high resolution up to 2560x2560)
+- BiRefNet-HR-matting model (high resolution matting)
+- BiRefNet_lite model (lightweight version for faster processing)
+- BiRefNet_lite-2K model (lightweight version for 2K resolution)
 </details>
 
 
@@ -247,7 +257,7 @@ GroundingDINO is a model for text-prompted object detection and segmentation, of
 - GroundingDINO: https://github.com/IDEA-Research/GroundingDINO
 - Clothes Segment: https://huggingface.co/mattmdjaga/segformer_b2_clothes
 
-- Created by: [1038 Lab](https://github.com/1038lab)
+- Created by: [AILab](https://github.com/1038lab)
 
 ## License
 GPL-3.0 License
