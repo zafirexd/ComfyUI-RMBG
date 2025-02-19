@@ -1,5 +1,10 @@
 # ComfyUI-RMBG Update Log
 
+## v1.9.1 (2025/02/20)
+### Technical Updates
+- Changed repository for model management to the new repository
+- Reorganized models files structure for better maintainability
+
 ## v1.9.0 (2025/02/19)
 ![rmbg_v1 9 0](https://github.com/user-attachments/assets/a7649781-42c9-4af4-94c7-6841e9395f5a)
 Add and group all BiRefNet models collections into BiRefNet node.
@@ -21,7 +26,6 @@ Add and group all BiRefNet models collections into BiRefNet node.
 - Maintained compatibility with existing workflows
 - Simplified model loading through Transformers pipeline
 
-
 ## v1.8.0 (2025/02/07)
 ![RMBG-v1 8 0](https://github.com/user-attachments/assets/d4a1309c-a635-443a-97b5-2639fb48c27a)
 
@@ -32,7 +36,7 @@ Add and group all BiRefNet models collections into BiRefNet node.
   - Better edge detection and detail preservation
   - FP16 optimization for faster processing
   - MIT License for commercial use
-  - 
+
 ![RMBG_v1 8 0](https://github.com/user-attachments/assets/193d8d4b-5fac-475c-a184-9a28fa6252fc)
 
 ### Technical Improvements
