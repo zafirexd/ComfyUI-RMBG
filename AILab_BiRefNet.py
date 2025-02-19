@@ -1,4 +1,4 @@
-# ComfyUI-RMBG v1.9.0
+# ComfyUI-RMBG
 # This custom node for ComfyUI provides functionality for background removal using BiRefNet models.
 #
 # Model License Notice:
@@ -24,114 +24,114 @@ folder_paths.add_model_folder_path("rmbg", os.path.join(folder_paths.models_dir,
 
 # Model configuration
 MODEL_CONFIG = {
-    "BiRefNet": {
-        "repo_id": "ZhengPeng7/BiRefNet",
+    "BiRefNet-general": {
+        "repo_id": "1038lab/BiRefNet",
         "files": {
             "birefnet.py": "birefnet.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet-general.safetensors": "BiRefNet-general.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-GENERAL",
+        "cache_dir": "BiRefNet",
         "description": "General purpose model with balanced performance",
         "default_res": 1024,
         "max_res": 2048,
         "min_res": 512
     },
     "BiRefNet_512x512": {
-        "repo_id": "ZhengPeng7/BiRefNet_512x512",
+        "repo_id": "1038lab/BiRefNet",
         "files": {
             "birefnet.py": "birefnet.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet_512x512.safetensors": "BiRefNet_512x512.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-512",
+        "cache_dir": "BiRefNet",
         "description": "Optimized for 512x512 resolution, faster processing",
         "default_res": 512,
         "max_res": 1024,
         "min_res": 256,
-        "force_res": True  # Forces resolution to be multiple of 512
+        "force_res": True
     },
-    "BiRefNet-portrait": {
-        "repo_id": "ZhengPeng7/BiRefNet-portrait",
+    "BiRefNet-HR": {
+        "repo_id": "1038lab/BiRefNet",
         "files": {
             "birefnet.py": "birefnet.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet-HR.safetensors": "BiRefNet-HR.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-PORTRAIT",
+        "cache_dir": "BiRefNet",
+        "description": "High resolution general purpose model",
+        "default_res": 2048,
+        "max_res": 2560,
+        "min_res": 1024
+    },
+    "BiRefNet-portrait": {
+        "repo_id": "1038lab/BiRefNet",
+        "files": {
+            "birefnet.py": "birefnet.py",
+            "BiRefNet_config.py": "BiRefNet_config.py",
+            "BiRefNet-portrait.safetensors": "BiRefNet-portrait.safetensors",
+            "config.json": "config.json"
+        },
+        "cache_dir": "BiRefNet",
         "description": "Optimized for portrait/human matting",
         "default_res": 1024,
         "max_res": 2048,
         "min_res": 512
     },
     "BiRefNet-matting": {
-        "repo_id": "ZhengPeng7/BiRefNet-matting",
+        "repo_id": "1038lab/BiRefNet",
         "files": {
             "birefnet.py": "birefnet.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet-matting.safetensors": "BiRefNet-matting.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-MATTING",
+        "cache_dir": "BiRefNet",
         "description": "General purpose matting model",
         "default_res": 1024,
         "max_res": 2048,
         "min_res": 512
     },
-    "BiRefNet-HR": {
-        "repo_id": "ZhengPeng7/BiRefNet_HR",
-        "files": {
-            "birefnet.py": "birefnet.py",
-            "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
-            "config.json": "config.json"
-        },
-        "cache_dir": "BIREFNET-HR",
-        "description": "High resolution general purpose model",
-        "default_res": 2048,
-        "max_res": 2560,
-        "min_res": 1024
-    },
     "BiRefNet-HR-matting": {
-        "repo_id": "ZhengPeng7/BiRefNet_HR-matting",
+        "repo_id": "1038lab/BiRefNet",
         "files": {
             "birefnet.py": "birefnet.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet-HR-matting.safetensors": "BiRefNet-HR-matting.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-HR-MATTING",
+        "cache_dir": "BiRefNet",
         "description": "High resolution matting model",
         "default_res": 2048,
         "max_res": 2560,
         "min_res": 1024
     },
     "BiRefNet_lite": {
-        "repo_id": "ZhengPeng7/BiRefNet_lite",
+        "repo_id": "1038lab/BiRefNet",
         "files": {
-            "birefnet.py": "birefnet.py",
+            "birefnet_lite.py": "birefnet_lite.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet_lite.safetensors": "BiRefNet_lite.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-LITE",
+        "cache_dir": "BiRefNet",
         "description": "Lightweight version for faster processing",
         "default_res": 1024,
         "max_res": 2048,
         "min_res": 512
     },
     "BiRefNet_lite-2K": {
-        "repo_id": "ZhengPeng7/BiRefNet_lite-2K",
+        "repo_id": "1038lab/BiRefNet",
         "files": {
-            "birefnet.py": "birefnet.py",
+            "birefnet_lite.py": "birefnet_lite.py",
             "BiRefNet_config.py": "BiRefNet_config.py",
-            "model.safetensors": "model.safetensors",
+            "BiRefNet_lite-2K.safetensors": "BiRefNet_lite-2K.safetensors",
             "config.json": "config.json"
         },
-        "cache_dir": "BIREFNET-LITE-2K",
+        "cache_dir": "BiRefNet",
         "description": "Lightweight version optimized for 2K resolution",
         "default_res": 2048,
         "max_res": 2560,
@@ -210,7 +210,7 @@ class BiRefNetModel:
         
         missing_files = []
         for filename in MODEL_CONFIG[model_name]["files"].keys():
-            if not os.path.exists(os.path.join(cache_dir, MODEL_CONFIG[model_name]["files"][filename])):
+            if not os.path.exists(os.path.join(cache_dir, filename)):
                 missing_files.append(filename)
         
         if missing_files:
@@ -253,9 +253,11 @@ class BiRefNetModel:
             self.clear_model()
             
             cache_dir = self.get_cache_dir(model_name)
-            model_path = os.path.join(cache_dir, "birefnet.py")
+            model_filename = [k for k in MODEL_CONFIG[model_name]["files"].keys() if k.endswith('.py') and k != "BiRefNet_config.py"][0]
+            model_path = os.path.join(cache_dir, model_filename)
             config_path = os.path.join(cache_dir, "BiRefNet_config.py")
-            weights_path = os.path.join(cache_dir, "model.safetensors")
+            weights_filename = [k for k in MODEL_CONFIG[model_name]["files"].keys() if k.endswith('.safetensors')][0]
+            weights_path = os.path.join(cache_dir, weights_filename)
             
             try:
                 # Fix relative imports in model file
