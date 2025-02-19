@@ -6,6 +6,11 @@ $$\textcolor{red}{\Huge \text{If this custom node helps you or you like my work,
 $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
 
 ## News & Updates
+- 2025/02/19: Update ComfyUI-RMBG to v1.9.0 with BiRefNet model improvements ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v190-20250219) )
+![rmbg_v1 9 0](https://github.com/user-attachments/assets/a7649781-42c9-4af4-94c7-6841e9395f5a)
+  - Enhanced BiRefNet model performance and stability
+  - Improved memory management for large images
+
 - 2025/02/07: Update ComfyUI-RMBG to v1.8.0 with new BiRefNet-HR model ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v180-20250207) )
 ![RMBG-v1 8 0](https://github.com/user-attachments/assets/d4a1309c-a635-443a-97b5-2639fb48c27a)
 
