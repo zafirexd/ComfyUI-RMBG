@@ -204,12 +204,16 @@ BEN2 is a more advanced version of BEN, offering:
 - Support for more image types
 - Suitable for batch processing
 
-## BIREFNET-HR
-BIREFNET-HR is a powerful model for image segmentation, offering:
-- High accuracy in complex environments
-- Precise edge detection and preservation
-- Excellent handling of fine details
-- Support for multiple objects in a single image
+## BIREFNET MODELS
+BIREFNET is a powerful model for image segmentation, offering:
+- BiRefNet-general purpose model (balanced performance)
+- BiRefNet_512x512 model (optimized for 512x512 resolution)
+- BiRefNet-portrait model (optimized for portrait/human matting)
+- BiRefNet-matting model (general purpose matting)
+- BiRefNet-HR model (high resolution up to 2560x2560)
+- BiRefNet-HR-matting model (high resolution matting)
+- BiRefNet_lite model (lightweight version for faster processing)
+- BiRefNet_lite-2K model (lightweight version for 2K resolution)
 
 ## SAM
 SAM is a powerful model for object detection and segmentation, offering:
@@ -261,7 +265,7 @@ GroundingDINO is a model for text-prompted object detection and segmentation, of
 - INSPYRENET: https://github.com/plemeri/InSPyReNet
 - BEN: https://huggingface.co/PramaLLC/BEN
 - BEN2: https://huggingface.co/PramaLLC/BEN2
-- BiRefNet-HR: https://huggingface.co/ZhengPeng7/BiRefNet_HR
+- BiRefNet: https://huggingface.co/ZhengPeng7
 - SAM: https://huggingface.co/facebook/sam-vit-base
 - GroundingDINO: https://github.com/IDEA-Research/GroundingDINO
 - Clothes Segment: https://huggingface.co/mattmdjaga/segformer_b2_clothes
