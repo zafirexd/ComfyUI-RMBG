@@ -1,12 +1,12 @@
 # ComfyUI-RMBG Update Log
 
 ## v1.9.2 (2025/02/21)
+![RMBG_V1 9 2](https://github.com/user-attachments/assets/aaf51bff-931b-47ef-b20b-0dabddc49873)
 ### New Features
 - Added Fast Foreground Color Estimation feature
   - New `refine_foreground` option for optimizing transparent backgrounds
   - Improved edge quality and detail preservation
   - Better handling of semi-transparent regions
-![RMBG_V1 9 2](https://github.com/user-attachments/assets/aaf51bff-931b-47ef-b20b-0dabddc49873)
 
 ### Technical Improvements
 - Added OpenCV dependency for advanced image processing
