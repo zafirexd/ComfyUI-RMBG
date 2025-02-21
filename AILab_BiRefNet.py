@@ -1,4 +1,4 @@
-# ComfyUI-RMBG
+# ComfyUI-RMBG v1.9.2
 # This custom node for ComfyUI provides functionality for background removal using BiRefNet models.
 #
 # Model License Notice:
@@ -16,6 +16,7 @@ from huggingface_hub import hf_hub_download
 import sys
 import importlib.util
 from safetensors.torch import load_file
+import cv2
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -161,26 +162,20 @@ def refine_foreground(image_bchw, masks_b1hw):
     refined_fg = []
     for i in range(b):
         mask = mask_np[i, 0]      
-        # Increase threshold for sharper edges
-        thresh = 0.45  # Fine-tuned from 0.4
+        thresh = 0.45
         mask_binary = (mask > thresh).astype(np.float32)
         
-        # Smaller kernel and sigma for more precise edge control
         edge_blur = cv2.GaussianBlur(mask_binary, (3, 3), 0)
+        transition_mask = np.logical_and(mask > 0.05, mask < 0.95)
         
-        # Narrower transition area to reduce white edges
-        transition_mask = np.logical_and(mask > 0.05, mask < 0.95)  # Adjusted from 0.02-0.98
-        
-        # Increase alpha for stronger original mask influence
-        alpha = 0.85  # Increased from 0.7
+        alpha = 0.85
         mask_refined = np.where(transition_mask,
                               alpha * mask + (1-alpha) * edge_blur,
                               mask_binary)
         
-        # Additional edge refinement
         edge_region = np.logical_and(mask > 0.2, mask < 0.8)
         mask_refined = np.where(edge_region,
-                              mask_refined * 0.98,  # Slightly reduce intensity in edge regions
+                              mask_refined * 0.98,
                               mask_refined)
         
         result = []
@@ -333,7 +328,8 @@ class BiRefNet:
             "mask_blur": "Specify the amount of blur to apply to the mask edges (0 for no blur, higher values for more blur).",
             "mask_offset": "Adjust the mask boundary (positive values expand the mask, negative values shrink it).",
             "background": "Choose the background color for the final output (Alpha for transparent background).",
-            "invert_output": "Enable to invert both the image and mask output (useful for certain effects)."
+            "invert_output": "Enable to invert both the image and mask output (useful for certain effects).",
+            "refine_foreground": "Use Fast Foreground Colour Estimation to optimize transparent background"
         }
         
         return {
@@ -345,7 +341,8 @@ class BiRefNet:
                 "mask_blur": ("INT", {"default": 0, "min": 0, "max": 64, "step": 1, "tooltip": tooltips["mask_blur"]}),
                 "mask_offset": ("INT", {"default": 0, "min": -20, "max": 20, "step": 1, "tooltip": tooltips["mask_offset"]}),
                 "background": (["Alpha", "black", "white", "gray", "green", "blue", "red"], {"default": "Alpha", "tooltip": tooltips["background"]}),
-                "invert_output": ("BOOLEAN", {"default": False, "tooltip": tooltips["invert_output"]})
+                "invert_output": ("BOOLEAN", {"default": False, "tooltip": tooltips["invert_output"]}),
+                "refine_foreground": ("BOOLEAN", {"default": False, "tooltip": tooltips["refine_foreground"]})
             }
         }
 
@@ -417,11 +414,24 @@ class BiRefNet:
                 if params["invert_output"]:
                     mask = Image.fromarray(255 - np.array(mask))
 
-                # Create original image from tensor
-                orig_image = tensor2pil(img)
-                orig_rgba = orig_image.convert("RGBA")
-                r, g, b, _ = orig_rgba.split()
-                foreground = Image.merge('RGBA', (r, g, b, mask))
+                # Convert to tensors for refine_foreground
+                img_tensor = torch.from_numpy(np.array(tensor2pil(img))).permute(2, 0, 1).unsqueeze(0) / 255.0
+                mask_tensor = torch.from_numpy(np.array(mask)).unsqueeze(0).unsqueeze(0) / 255.0
+                
+                if params.get("refine_foreground", False):
+                    refined_fg = refine_foreground(
+                        img_tensor, 
+                        mask_tensor
+                    )
+                    refined_fg = tensor2pil(refined_fg[0].permute(1, 2, 0))
+                    orig_image = tensor2pil(img)
+                    r, g, b = refined_fg.split()
+                    foreground = Image.merge('RGBA', (r, g, b, mask))
+                else:
+                    orig_image = tensor2pil(img)
+                    orig_rgba = orig_image.convert("RGBA")
+                    r, g, b, _ = orig_rgba.split()
+                    foreground = Image.merge('RGBA', (r, g, b, mask))
 
                 if params["background"] != "Alpha":
                     bg_color = bg_colors[params["background"]]
