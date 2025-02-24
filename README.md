@@ -6,6 +6,8 @@ $$\textcolor{red}{\Huge \text{If this custom node helps you or you like my work,
 $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
 
 ## News & Updates
+- 2025/02/24: Update ComfyUI-RMBG to v1.9.3 Clean up the code and fix the issue ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v193-20250224) )
+
 - 2025/02/21: Update ComfyUI-RMBG to v1.9.2 with Fast Foreground Color Estimation ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v192-20250221) )
 ![RMBG_V1 9 2](https://github.com/user-attachments/assets/aaf51bff-931b-47ef-b20b-0dabddc49873)
   - Added new foreground refinement feature for better transparency handling
