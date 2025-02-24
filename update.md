@@ -1,5 +1,9 @@
 # ComfyUI-RMBG Update Log
 
+## v1.9.3 (2025/02/24)
+### New Features
+- Clean up the code and fix the transformers version issue `transformers>=4.35.0,<=4.48.3`
+
 ## v1.9.2 (2025/02/21)
 ![RMBG_V1 9 2](https://github.com/user-attachments/assets/aaf51bff-931b-47ef-b20b-0dabddc49873)
 ### New Features
