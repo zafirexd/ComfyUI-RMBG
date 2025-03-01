@@ -46,7 +46,7 @@ Add and group all BiRefNet models collections into BiRefNet node.
 
 ## v1.8.0 (2025/02/07)
 ![BiRefNet-HR](https://github.com/user-attachments/assets/c27bf3c5-92b9-472d-b097-5fed0f182d47)
-(In case people download the image with old V1.8.0 workflow, we replace this image with new BiRefNet Node) (2025/03/01)
+** (To ensure compatibility with the old V1.8.0 workflow, we have replaced this image with the new BiRefNet Node) (2025/03/01)
 
 ### New Model Added: BiRefNet-HR
   - Added support for BiRefNet High Resolution model
@@ -57,7 +57,7 @@ Add and group all BiRefNet models collections into BiRefNet node.
   - MIT License for commercial use
 
 ![BiRefNet-HR-2](https://github.com/user-attachments/assets/12441891-0330-4972-95c2-b211fce07069)
-(In case people download the image with old V1.8.0 workflow, we replace this image with new BiRefNet Node)  (2025/03/01)
+** (To ensure compatibility with the old V1.8.0 workflow, we have replaced this image with the new BiRefNet Node) (2025/03/01)
 
 ### Technical Improvements
 - Added FP16 (half-precision) support for better performance
