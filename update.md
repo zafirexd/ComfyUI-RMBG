@@ -45,7 +45,8 @@ Add and group all BiRefNet models collections into BiRefNet node.
 - Simplified model loading through Transformers pipeline
 
 ## v1.8.0 (2025/02/07)
-![RMBG-v1 8 0](https://github.com/user-attachments/assets/d4a1309c-a635-443a-97b5-2639fb48c27a)
+![BiRefNet-HR](https://github.com/user-attachments/assets/c27bf3c5-92b9-472d-b097-5fed0f182d47)
+(In case people download the image with old V1.8.0 workflow, we replace this image with new BiRefNet Node) (2025/03/01)
 
 ### New Model Added: BiRefNet-HR
   - Added support for BiRefNet High Resolution model
@@ -55,7 +56,8 @@ Add and group all BiRefNet models collections into BiRefNet node.
   - FP16 optimization for faster processing
   - MIT License for commercial use
 
-![RMBG_v1 8 0](https://github.com/user-attachments/assets/193d8d4b-5fac-475c-a184-9a28fa6252fc)
+![BiRefNet-HR-2](https://github.com/user-attachments/assets/12441891-0330-4972-95c2-b211fce07069)
+(In case people download the image with old V1.8.0 workflow, we replace this image with new BiRefNet Node)  (2025/03/01)
 
 ### Technical Improvements
 - Added FP16 (half-precision) support for better performance
