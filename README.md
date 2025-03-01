@@ -23,7 +23,8 @@ $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
   - Improved memory management for large images
 
 - 2025/02/07: Update ComfyUI-RMBG to v1.8.0 with new BiRefNet-HR model ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v180-20250207) )
-![RMBG-v1 8 0](https://github.com/user-attachments/assets/d4a1309c-a635-443a-97b5-2639fb48c27a)
+![BiRefNet-HR](https://github.com/user-attachments/assets/c27bf3c5-92b9-472d-b097-5fed0f182d47)
+** (To ensure compatibility with the old V1.8.0 workflow, we have replaced this image with the new BiRefNet Node) (2025/03/01)
 
   - Added a new custom node for BiRefNet-HR model.
   - Support high resolution image processing (up to 2048x2048)
