@@ -1,5 +1,27 @@
 # ComfyUI-RMBG Update Log
 
+## V2.1.0 (2025/03/19)
+### New Features
+The integration of internationalization (`i18n`) support significantly enhances ComfyUI-RMBG, enabling users worldwide to utilize background removal features in their preferred languages. This update fosters a more tailored and efficient workflow within ComfyUI-RMBG. The user interface has been improved to facilitate dynamic language switching according to user preferences. All newly introduced features are designed to be fully translatable, thereby improving accessibility for users who do not speak English.
+
+# Supported Languages
+| Language | Custom Nodes `i18n` UI |
+|----------|-------|
+| English  | ![RMBG_i18n_en](https://github.com/user-attachments/assets/b43512ab-a911-4ed8-aebf-abb42539728a) |
+| 中文     | ![RMBG_i18n_zh](https://github.com/user-attachments/assets/e591d98c-ede3-498f-b6af-81d3c6f56c8e) |
+| 日本語   | ![RMBG_i18n_ja](https://github.com/user-attachments/assets/40ad40fb-ab4f-4796-9f08-da4fa76b76c3) |
+| Русский  | ![RMBG_i18n_ru](https://github.com/user-attachments/assets/6b2fbb4b-ee31-4aa4-b4d5-d393b4bce782) |
+| 한국어   | ![RMBG_i18n_ko](https://github.com/user-attachments/assets/ac956faa-d8e3-498f-9eb0-1556e7ac3661) |
+# End of Selection
+
+### Supported Languages
+  - en (English)
+  - zh (中文)
+  - ru (Русский)
+  - ja (日本語)
+  - ko (한국어)
+  - fr (Français)
+
 ## v2.0.0 (2025/03/13)
 ### New Features
 - Added Load Image, Preview Image, Preview Mask, and a node that previews both the image and the mask simultaneously. This is the first phase of our toolset, with more useful tools coming in future updates.
