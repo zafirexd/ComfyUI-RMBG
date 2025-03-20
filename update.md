@@ -7,11 +7,11 @@ The integration of internationalization (`i18n`) support significantly enhances 
 # Supported Languages
 | Language | Custom Nodes `i18n` UI |
 |----------|-------|
-| English  | ![RMBG_i18n_en](https://github.com/user-attachments/assets/b43512ab-a911-4ed8-aebf-abb42539728a) |
-| 中文     | ![RMBG_i18n_zh](https://github.com/user-attachments/assets/e591d98c-ede3-498f-b6af-81d3c6f56c8e) |
-| 日本語   | ![RMBG_i18n_ja](https://github.com/user-attachments/assets/40ad40fb-ab4f-4796-9f08-da4fa76b76c3) |
-| Русский  | ![RMBG_i18n_ru](https://github.com/user-attachments/assets/6b2fbb4b-ee31-4aa4-b4d5-d393b4bce782) |
-| 한국어   | ![RMBG_i18n_ko](https://github.com/user-attachments/assets/ac956faa-d8e3-498f-9eb0-1556e7ac3661) |
+| English  | ![node_en](https://github.com/user-attachments/assets/c20e9031-2f1a-4d7b-9037-fd30171f9d58) |
+| 中文     | ![node_zh](https://github.com/user-attachments/assets/0fb77875-7693-4214-86f4-c6a92ce92497) |
+| 日本語   | ![node_ja](https://github.com/user-attachments/assets/2f655484-6569-47c6-9e7c-1a175e932cc6) |
+| Русский  | ![node_ru](https://github.com/user-attachments/assets/17ffbb5a-6948-460e-84cb-bca05646eb4f) |
+| 한국어   | ![node_ko](https://github.com/user-attachments/assets/3899e487-6620-449b-87f4-ddb51eae9520) |
 # End of Selection
 
 ### Supported Languages
