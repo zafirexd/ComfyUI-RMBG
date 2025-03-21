@@ -14,14 +14,6 @@ The integration of internationalization (`i18n`) support significantly enhances 
 | 한국어   | ![node_ko](https://github.com/user-attachments/assets/3899e487-6620-449b-87f4-ddb51eae9520) |
 | Français | ![node_fr](https://github.com/user-attachments/assets/da45208a-2567-4905-8fe2-ee26f6431c37) |
 
-### Supported Languages
-  - en (English)
-  - zh (中文)
-  - ru (Русский)
-  - ja (日本語)
-  - ko (한국어)
-  - fr (Français)
-
 ## v2.0.0 (2025/03/13)
 ### New Features
 - Added Load Image, Preview Image, Preview Mask, and a node that previews both the image and the mask simultaneously. This is the first phase of our toolset, with more useful tools coming in future updates.
