@@ -1,5 +1,12 @@
 # ComfyUI-RMBG Update Log
 
+## V2.1.1 (2025/03/21)
+Enhanced compatibility with Transformers
+  - Added support for higher versions of the transformers library (≥ 4.49.0)
+  - Resolved conflicts with other models requiring higher version transformers
+  - Improved error handling and more user-friendly error messages
+  - If you encounter issues, you can still revert to the recommended version: `pip install transformers==4.48.3`
+
 ## V2.1.0 (2025/03/19)
 ### New Features
 The integration of internationalization (`i18n`) support significantly enhances ComfyUI-RMBG, enabling users worldwide to utilize background removal features in their preferred languages. This update fosters a more tailored and efficient workflow within ComfyUI-RMBG. The user interface has been improved to facilitate dynamic language switching according to user preferences. All newly introduced features are designed to be fully translatable, thereby improving accessibility for users who do not speak English.
