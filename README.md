@@ -6,6 +6,9 @@ $$\textcolor{red}{\Huge \text{If this custom node helps you or you like my work,
 $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
 
 ## News & Updates
+- **2025/03/21**: Update ComfyUI-RMBG to **v2.1.1** ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v200-20250321) )
+  - Enhanced compatibility with Transformers
+
 - **2025/03/19**: Update ComfyUI-RMBG to **v2.1.0** ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v200-20250319) )
 ![RMBG_i18n](https://github.com/user-attachments/assets/96b28ef0-4996-4fb2-a497-383d83eff52a)
   - Integrated internationalization (i18n) support for multiple languages.
