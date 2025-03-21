@@ -12,7 +12,7 @@ The integration of internationalization (`i18n`) support significantly enhances 
 | 日本語   | ![node_ja](https://github.com/user-attachments/assets/2f655484-6569-47c6-9e7c-1a175e932cc6) |
 | Русский  | ![node_ru](https://github.com/user-attachments/assets/17ffbb5a-6948-460e-84cb-bca05646eb4f) |
 | 한국어   | ![node_ko](https://github.com/user-attachments/assets/3899e487-6620-449b-87f4-ddb51eae9520) |
-# End of Selection
+| Français | ![node_fr](https://github.com/user-attachments/assets/da45208a-2567-4905-8fe2-ee26f6431c37) |
 
 ### Supported Languages
   - en (English)
