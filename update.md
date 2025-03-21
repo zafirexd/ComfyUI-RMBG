@@ -7,7 +7,7 @@ Enhanced compatibility with Transformers
   - Improved error handling and more user-friendly error messages
   - If you encounter issues, you can still revert to the recommended version: `pip install transformers==4.48.3`
     
-  [transformers version compatibility](https://github.com/1038lab/ComfyUI-RMBG/blob/main/docs/version_compatibility.md)
+  [Transformers Version Compatibility](https://github.com/1038lab/ComfyUI-RMBG/blob/main/docs/version_compatibility.md)
 
 ## V2.1.0 (2025/03/19)
 ### New Features
