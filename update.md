@@ -13,7 +13,7 @@
   - `Mask Combiner`: Mask Combiner, used to combine multiple masks into one.
   - `Mask Extractor`: Mask Extractor, used to extract masks from images.
 
-![Comfyu-rmbg_v2 2 1_node_sample](https://github.com/user-attachments/assets/b3d2d1fb-d62f-488e-8938-94626a9b7b3a)
+![Comfyu-rmbg_v2 2 1_node_sample](https://github.com/user-attachments/assets/68f4233c-b992-473e-aa30-ca32086f5221)
 
 ### Bug Fixes
 - Fixed compatibility issues with transformers version 4.49+ dependencies.
