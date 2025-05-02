@@ -7,6 +7,7 @@ $$\textcolor{red}{\Huge \text{It's a great encouragement for my efforts!}}$$
 
 ## News & Updates
 - **2025/05/01**: Update ComfyUI-RMBG to **v2.3.0** ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v230-20250501) )
+![v2 3 0_node](https://github.com/user-attachments/assets/f53be704-bb53-4fdf-9e7f-fad00dcd5add)
   - Added new nodes: IC-LoRA Concat, Image Crop
   - Added resizing options for Load Image: Longest Side, Shortest Side, Width, and Height, enhancing flexibility.
 - **2025/04/05**: Update ComfyUI-RMBG to **v2.2.1** ( [update.md](https://github.com/1038lab/ComfyUI-RMBG/blob/main/update.md#v221-20250405) )
