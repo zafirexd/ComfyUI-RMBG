@@ -1,4 +1,4 @@
-# ComfyUI-RMBG v2.3.0
+# ComfyUI-RMBG v2.3.1
 #
 # This node facilitates background removal using various models, including RMBG-2.0, INSPYRENET, BEN, BEN2, and BIREFNET-HR.
 # It utilizes advanced deep learning techniques to process images and generate accurate masks for background removal.
@@ -24,7 +24,7 @@
 #    - ImageCombiner: Combines foreground and background images with various blending modes and positioning options.
 #    - ImageStitch: Stitches multiple images together in various directions.
 #    - ImageCrop: Crops an image to a specified size and position.
-#    - ICLoRAConcat: Concatenates images with a mask using ICLoRA.
+#    - ICLoRAConcat: Concatenates images with a mask using IC LoRA.
 
 # These nodes are crafted to streamline common image and mask operations within ComfyUI workflows.
 
@@ -67,6 +67,30 @@ def fill_mask(width, height, mask, box=(0, 0), color=0):
 
 def empty_image(width, height, batch_size=1):
     return torch.zeros([batch_size, height, width, 3])
+
+def upscale_mask(mask, width, height):
+    if mask.ndim == 3:
+        mask = mask.unsqueeze(1)
+    mask = common_upscale(mask, width, height, 'bicubic', 'disabled')
+    mask = mask.squeeze(1)
+    return mask
+
+def extract_alpha_mask(image):
+    alpha = image[..., 3]
+    if alpha.max() > 1.0:
+        alpha = alpha / 255.0
+    if len(alpha.shape) == 4:
+        alpha = alpha[:, :, :, 0]
+    return alpha.unsqueeze(1) if alpha.ndim == 3 else alpha
+
+def ensure_mask_shape(mask):
+    if mask is None:
+        return None
+    if mask.ndim == 2:
+        return mask.unsqueeze(0)
+    if mask.ndim == 4 and mask.shape[1] == 1:
+        return mask.squeeze(1)
+    return mask
 
 # Base class for preview
 class AILab_PreviewBase:
@@ -672,7 +696,8 @@ class AILab_ImageCombiner:
             output_images.append(pil2tensor(result))
         
         return (torch.cat(output_images, dim=0),)
-    
+
+# Mask extractor node
 class AILab_MaskExtractor:
     @classmethod
     def INPUT_TYPES(cls):
@@ -835,7 +860,7 @@ class AILab_ImageStitch:
         resized = common_upscale(img, width, height, "lanczos", "disabled")
         return resized.movedim(1, -1)
 
-# # Image Crop node
+# Image Crop node
 class AILab_ImageCrop:
     @classmethod
     def INPUT_TYPES(s):
@@ -852,7 +877,7 @@ class AILab_ImageCrop:
         }
 
     RETURN_TYPES = ("IMAGE", "IMAGE")
-    RETURN_NAMES = ("crop", "rest")
+    RETURN_NAMES = ("CROP", "REST")
     FUNCTION = "execute"
     CATEGORY = "🧪AILab/🖼️IMAGE"
 
@@ -920,7 +945,7 @@ class AILab_ImageCrop:
             rest[:] = 0
         return (crop, rest)
 
-# class AILab_ICLoRAConcat:
+# ICLoRA Concat node
 class AILab_ICLoRAConcat:
     @classmethod
     def INPUT_TYPES(cls):
@@ -939,33 +964,25 @@ class AILab_ICLoRAConcat:
 
     CATEGORY = "🧪AILab/🖼️IMAGE"
     FUNCTION = "create"
-
     RETURN_TYPES = ("IMAGE", "MASK", "MASK", "INT", "INT", "INT", "INT")
     RETURN_NAMES = ("IMAGE", "OBJECT_MASK", "BASE_MASK", "WIDTH", "HEIGHT", "X", "Y")
 
     def create(self, object_image, layout, custom_size=0, base_image=None, object_mask=None, base_mask=None):
-        # Auto extract alpha channel as mask if present and mask is not provided
         if object_image.shape[-1] == 4 and object_mask is None:
-            alpha = object_image[..., 3]
-            if alpha.max() > 1.0:
-                alpha = alpha / 255.0
-            if len(alpha.shape) == 4:
-                alpha = alpha[:, :, :, 0]
-            object_mask = alpha.unsqueeze(1) if alpha.ndim == 3 else alpha
+            object_mask = extract_alpha_mask(object_image)
             object_image = object_image[..., :3]
         if base_image is not None and base_image.shape[-1] == 4 and base_mask is None:
-            alpha = base_image[..., 3]
-            if alpha.max() > 1.0:
-                alpha = alpha / 255.0
-            if len(alpha.shape) == 4:
-                alpha = alpha[:, :, :, 0]
-            base_mask = alpha.unsqueeze(1) if alpha.ndim == 3 else alpha
+            base_mask = extract_alpha_mask(base_image)
             base_image = base_image[..., :3]
+
         if base_image is None:
             base_image = empty_image(object_image.shape[2], object_image.shape[1])
             base_mask = torch.full((1, object_image.shape[1], object_image.shape[2]), 1, dtype=torch.float32, device="cpu")
         elif base_image is not None and base_mask is None:
             raise ValueError("base_mask is required when base_image is provided")
+
+        object_mask = ensure_mask_shape(object_mask)
+        base_mask = ensure_mask_shape(base_mask)
 
         _, base_h, base_w, base_c = base_image.shape
         _, obj_h, obj_w, obj_c = object_image.shape
@@ -975,7 +992,7 @@ class AILab_ICLoRAConcat:
                 new_base_h = custom_size
                 new_base_w = int(base_w * (custom_size / base_h))
                 base_image = base_image.movedim(-1, 1)
-                base_image = comfy.utils.common_upscale(base_image, new_base_w, new_base_h, 'bicubic', 'disabled')
+                base_image = common_upscale(base_image, new_base_w, new_base_h, 'bicubic', 'disabled')
                 base_image = base_image.movedim(1, -1)
                 if base_mask is not None:
                     base_mask = upscale_mask(base_mask, new_base_w, new_base_h)
@@ -984,7 +1001,7 @@ class AILab_ICLoRAConcat:
             scale = base_h / obj_h
             new_obj_w = int(obj_w * scale)
             object_image = object_image.movedim(-1, 1)
-            object_image = comfy.utils.common_upscale(object_image, new_obj_w, base_h, 'bicubic', 'disabled')
+            object_image = common_upscale(object_image, new_obj_w, base_h, 'bicubic', 'disabled')
             object_image = object_image.movedim(1, -1)
             if object_mask is not None:
                 object_mask = upscale_mask(object_mask, new_obj_w, base_h)
@@ -995,13 +1012,19 @@ class AILab_ICLoRAConcat:
                 min_c = min(object_image.shape[-1], base_image.shape[-1])
                 object_image = object_image[..., :min_c]
                 base_image = base_image[..., :min_c]
+            
             image = torch.cat((object_image, base_image), dim=2)
-
             batch = object_mask.shape[0]
             out_h = base_h
             out_w = new_obj_w + base_w
             object_mask_resized = object_mask
             base_mask_resized = base_mask
+            
+            if object_mask_resized.shape[-2:] != (base_h, new_obj_w):
+                object_mask_resized = upscale_mask(object_mask_resized, new_obj_w, base_h)
+            if base_mask_resized.shape[-2:] != (base_h, base_w):
+                base_mask_resized = upscale_mask(base_mask_resized, base_w, base_h)
+            
             OBJECT_MASK = torch.zeros((batch, out_h, out_w), dtype=object_mask_resized.dtype, device=object_mask_resized.device)
             BASE_MASK = torch.zeros((batch, out_h, out_w), dtype=base_mask_resized.dtype, device=base_mask_resized.device)
             OBJECT_MASK[:, :, :new_obj_w] = object_mask_resized
@@ -1012,7 +1035,7 @@ class AILab_ICLoRAConcat:
                 new_base_w = custom_size
                 new_base_h = int(base_h * (custom_size / base_w))
                 base_image = base_image.movedim(-1, 1)
-                base_image = comfy.utils.common_upscale(base_image, new_base_w, new_base_h, 'bicubic', 'disabled')
+                base_image = common_upscale(base_image, new_base_w, new_base_h, 'bicubic', 'disabled')
                 base_image = base_image.movedim(1, -1)
                 if base_mask is not None:
                     base_mask = upscale_mask(base_mask, new_base_w, new_base_h)
@@ -1021,7 +1044,7 @@ class AILab_ICLoRAConcat:
             scale = base_w / obj_w
             new_obj_h = int(obj_h * scale)
             object_image = object_image.movedim(-1, 1)
-            object_image = comfy.utils.common_upscale(object_image, base_w, new_obj_h, 'bicubic', 'disabled')
+            object_image = common_upscale(object_image, base_w, new_obj_h, 'bicubic', 'disabled')
             object_image = object_image.movedim(1, -1)
             if object_mask is not None:
                 object_mask = upscale_mask(object_mask, base_w, new_obj_h)
@@ -1032,13 +1055,19 @@ class AILab_ICLoRAConcat:
                 min_c = min(object_image.shape[-1], base_image.shape[-1])
                 object_image = object_image[..., :min_c]
                 base_image = base_image[..., :min_c]
+            
             image = torch.cat((object_image, base_image), dim=1)
-
             batch = object_mask.shape[0]
             out_h = new_obj_h + base_h
             out_w = base_w
             object_mask_resized = object_mask
             base_mask_resized = base_mask
+            
+            if object_mask_resized.shape[-2:] != (new_obj_h, base_w):
+                object_mask_resized = upscale_mask(object_mask_resized, base_w, new_obj_h)
+            if base_mask_resized.shape[-2:] != (base_h, base_w):
+                base_mask_resized = upscale_mask(base_mask_resized, base_w, base_h)
+            
             OBJECT_MASK = torch.zeros((batch, out_h, out_w), dtype=object_mask_resized.dtype, device=object_mask_resized.device)
             BASE_MASK = torch.zeros((batch, out_h, out_w), dtype=base_mask_resized.dtype, device=base_mask_resized.device)
             OBJECT_MASK[:, :new_obj_h, :] = object_mask_resized
@@ -1079,5 +1108,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AILab_MaskExtractor": "Mask Extractor (RMBG) 🎭",
     "AILab_ImageStitch": "Image Stitch (RMBG) 🖼️",
     "AILab_ImageCrop": "Image Crop (RMBG) 🖼️",
-    "AILab_ICLoRAConcat": "IC LoRA Concat (RMBG) 🖼️",
+    "AILab_ICLoRAConcat": "IC LoRA Concat (RMBG) 🖼️🎭",
 }
