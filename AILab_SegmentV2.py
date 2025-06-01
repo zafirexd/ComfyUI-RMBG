@@ -268,10 +268,10 @@ class SegmentV2:
         return (pil2tensor(result_image), mask_tensor, mask_image_vis)
 
 NODE_CLASS_MAPPINGS = {
-    "AILab_SegmentV2": SegmentV2,
+    "SegmentV2": SegmentV2,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "AILab_SegmentV2": "Segmentation V2 (RMBG)",
+    "SegmentV2": "Segmentation V2 (RMBG)",
 }
 
