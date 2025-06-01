@@ -7,6 +7,8 @@
 - Updated `MaskExtractor` node added color picker and support RGBA images by extracting and using the alpha channel as mask
 - Updated `ImageCombiner` node added WIDTH and HEIGHT output
 
+![ComfyUI-RMBG_V2 4 0 new nodes](https://github.com/user-attachments/assets/7ab023e7-70b4-4b97-910a-e608c03841cf)
+
 ### New Segment V2 (Recommended)
 - Uses Hugging Face transformers library
 - Better compatibility with newer PyTorch (2.x) and CUDA versions
