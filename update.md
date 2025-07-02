@@ -6,8 +6,6 @@
 ![image_mask_resize](https://github.com/user-attachments/assets/32afcd17-29a2-42bf-a31c-9ea2b604d5df)
 - Implemented the LamaRemover node for object removal using the LaMa model. For a more advanced object removal solution, see our companion project: [ComfyUI-MiniMax-Remover](https://github.com/1038lab/ComfyUI-MiniMax-Remover)
 ![lamaRemover](https://github.com/user-attachments/assets/7230b39c-c443-44bb-bc6e-3e9ecfd03a3d)
-
-
 - Added 2 BiRefNet models: `BiRefNet_lite-matting` and `BiRefNet_dynamic`
 - Added batch image support for `Segment_v1` and `Segment_V2` nodes
 
