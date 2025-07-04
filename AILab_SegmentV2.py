@@ -19,32 +19,32 @@ from AILab_ImageMaskTools import pil2tensor, tensor2pil
 # SAM model definitions (6 models)
 SAM_MODELS = {
     "sam_vit_h (2.56GB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_vit_h.pth",
+        "model_url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
         "model_type": "vit_h",
-        "filename": "sam_vit_h.pth"
+        "filename": "sam_vit_h_4b8939.pth"
     },
     "sam_vit_l (1.25GB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_vit_l.pth",
+        "model_url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth",
         "model_type": "vit_l",
-        "filename": "sam_vit_l.pth"
+        "filename": "sam_vit_l_0b3195.pth"
     },
     "sam_vit_b (375MB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_vit_b.pth",
+        "model_url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth",
         "model_type": "vit_b",
-        "filename": "sam_vit_b.pth"
+        "filename": "sam_vit_b_01ec64.pth"
     },
     "sam_hq_vit_h (2.57GB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_hq_vit_h.pth",
+        "model_url": "https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_h.pth",
         "model_type": "vit_h",
         "filename": "sam_hq_vit_h.pth"
     },
     "sam_hq_vit_l (1.25GB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_hq_vit_l.pth",
+        "model_url": "https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_l.pth",
         "model_type": "vit_l",
         "filename": "sam_hq_vit_l.pth"
     },
     "sam_hq_vit_b (379MB)": {
-        "model_url": "https://huggingface.co/1038lab/sam/resolve/main/sam_hq_vit_b.pth",
+        "model_url": "https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_b.pth",
         "model_type": "vit_b",
         "filename": "sam_hq_vit_b.pth"
     }
@@ -53,29 +53,43 @@ SAM_MODELS = {
 # GroundingDINO model definitions (2 models)
 DINO_MODELS = {
     "GroundingDINO_SwinT_OGC (694MB)": {
-        "config_url": "https://huggingface.co/1038lab/GroundingDINO/resolve/main/GroundingDINO_SwinT_OGC.cfg.py",
-        "model_url": "https://huggingface.co/1038lab/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth",
+        "config_url": "https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinT_OGC.cfg.py",
+        "model_url": "https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth",
         "config_filename": "GroundingDINO_SwinT_OGC.cfg.py",
         "model_filename": "groundingdino_swint_ogc.pth"
     },
     "GroundingDINO_SwinB (938MB)": {
-        "config_url": "https://huggingface.co/1038lab/GroundingDINO/resolve/main/GroundingDINO_SwinB.cfg.py",
-        "model_url": "https://huggingface.co/1038lab/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth",
+        "config_url": "https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinB.cfg.py",
+        "model_url": "https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth",
         "config_filename": "GroundingDINO_SwinB.cfg.py",
         "model_filename": "groundingdino_swinb_cogcoor.pth"
     }
 }
 
+# Define explicit model directories
+SAM_MODELS_DIR = os.path.join(os.path.dirname(folder_paths.__file__), "..", "ComfyUI", "models", "sams")
+DINO_MODELS_DIR = os.path.join(os.path.dirname(folder_paths.__file__), "..", "ComfyUI", "models", "grounding-dino")
+
 def get_or_download_model_file(filename, url, dirname):
-    local_path = folder_paths.get_full_path(dirname, filename)
-    if local_path:
-        return local_path
-    folder = os.path.join(folder_paths.models_dir, dirname)
+    # Set the directory based on model type
+    if dirname.lower() == "sam":
+        folder = os.path.abspath(SAM_MODELS_DIR)
+    elif dirname.lower() == "grounding-dino":
+        folder = os.path.abspath(DINO_MODELS_DIR)
+    else:
+        folder = os.path.join(folder_paths.models_dir, dirname)
     os.makedirs(folder, exist_ok=True)
     local_path = os.path.join(folder, filename)
-    if not os.path.exists(local_path):
-        print(f"Downloading {filename} from {url} ...")
-        download_url_to_file(url, local_path)
+    # Check if file exists in the intended directory
+    if os.path.exists(local_path):
+        return local_path
+    # If not found, check if folder_paths knows about it
+    fp_path = folder_paths.get_full_path(dirname, filename)
+    if fp_path and os.path.exists(fp_path):
+        return fp_path
+    # Download if not present
+    print(f"Downloading {filename} from {url} ...")
+    download_url_to_file(url, local_path)
     return local_path
 
 def process_mask(mask_image: Image.Image, invert_output: bool = False, 
